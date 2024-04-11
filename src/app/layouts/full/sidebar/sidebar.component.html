@@ -1,0 +1,8 @@
+<mat-list>
+  <mat-list-item *ngFor="let menuItem of menuItems.getMenuItems()">
+    <a [routerLink]="['', menuItem.state]" routerLinkActive="selected" *ngIf="menuItem.type === 'link' && (menuItem.role === '' || menuItem.role === userRole)">
+      <mat-icon>{{ menuItem.icon }}</mat-icon>
+      <span>{{ menuItem.name }}</span>
+    </a>
+  </mat-list-item>
+</mat-list>
